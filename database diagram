@@ -1,0 +1,46 @@
+Twitter
+
+Users
+id: integer (primary key)
+user_name: string
+email: string
+bio: text
+joined_on: datetime
+location: string
+(one User has many tweets, one User has many favorites, one User to many replys)
+
+Tweets
+id:	integer (primary key)
+user_id: integer (foreign key)
+date_created: datetime
+body: string 
+(many tweets belong to one User, one Tweet has many favorites, one Tweet has many replys)
+
+Favorites
+id: integer (primary key)
+user_id: integer (foreign key)
+tweet_id: string (foreign key)
+(many favorites belong to one User, many favorites belong to one Tweet)
+
+Replys
+id: integer (primary key)
+user_id: integer (foreign key)
+tweet_id: integer (foreign key)
+(many replys belong to one User, many replys belong to one Tweet)
+
+
+I was really confused about how to map the relationship between users followed and users following, as you'll see below:
+
+Followings
+id: integer (primary key)
+followed_user_id: integer (foreign key)
+followed_by_user_id: integer (foreign key)
+(many users to many followings)
+
+UserFollowings
+id: integer (primary key)
+user_id: 	
+following_id: 
+
+
+
